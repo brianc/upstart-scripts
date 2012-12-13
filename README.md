@@ -3,7 +3,7 @@ Scripts to start and manage processes with upstart
 ## generic-node
 
 1. `sudo mkdir /srv`
-2. `cd /srv'
+2. `cd /srv`
 3. `git clone https://github.com/(you)/(your_project).git`
 4. `cd (your_project)`
 5. `npm install`
@@ -28,3 +28,6 @@ That's really it.  Mostly here now because I keep having to reference it on othe
 you can stop your project with `sudo initctl stop (your_project)`
 
 you can restart your project with `sudo initctl restart (your_project)`
+
+## warning
+This will run your node application as __root__.  You are responsible for dropping to a different user within the app.  Use `process.setuid` and `process.setgid`.
