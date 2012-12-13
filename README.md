@@ -16,17 +16,15 @@ Scripts to start and manage processes with upstart
 The script will start a node app by running `node /srv/(your_project)/index.js`
 
 Right now you need node installed somewhere root can access it.  
-To verify, make sure this return some valid output: `sudo which node`
+To verify, make sure this return some valid output: `sudo which node`  
 
-It sets NODE_EVN=production
-It sets CWD to `/srv/(your_project)`
-
-It logs your processes stdout and stderr to `/var/log/(your_project).log`
+- It sets NODE_EVN=production
+- It sets CWD to `/srv/(your_project)`
+- It logs your processes stdout and stderr to `/var/log/(your_project).log`
 
 That's really it.  Mostly here now because I keep having to reference it on other servers I set up.
 
-you can stop your project with `sudo initctl stop (your_project)`
-
+you can stop your project with `sudo initctl stop (your_project)`  
 you can restart your project with `sudo initctl restart (your_project)`
 
 ### warning
