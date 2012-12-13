@@ -19,7 +19,7 @@ Right now you need node installed somewhere root can access it.
 To verify, make sure this return some valid output: `sudo which node`
 
 It sets NODE_EVN=production
-It sets CWD to `/srv/(your_project)
+It sets CWD to `/srv/(your_project)`
 
 It logs your processes stdout and stderr to `/var/log/(your_project).log`
 
@@ -29,5 +29,8 @@ you can stop your project with `sudo initctl stop (your_project)`
 
 you can restart your project with `sudo initctl restart (your_project)`
 
-## warning
-This will run your node application as __root__.  You are responsible for dropping to a different user within the app.  Use `process.setuid` and `process.setgid`.
+### warning
+This will run your node application as __root__.  
+You are responsible for dropping to a different user within the app.  
+Use `process.setuid` and `process.setgid` [within node](http://nodejs.org/api/process.html#process_process_setuid_id).  
+Or modify the script to use `setuid` and `setgid` [within upstart itself](http://upstart.ubuntu.com/cookbook/#setuid).
